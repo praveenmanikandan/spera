@@ -8,6 +8,7 @@ import {
   addDoc,
   collection,
   Firestore,
+  serverTimestamp,
 } from "firebase/firestore";
 import {
   getStorage,
@@ -93,7 +94,7 @@ export default function AddResources() {
       resourceUrl,
       docUrl,
       visibility: true,
-      timestamp: new Date().toTimeString(),
+      timestamp: serverTimestamp(),
     })
       .then(() => {
         setSuccessMsg("Resource Added");
