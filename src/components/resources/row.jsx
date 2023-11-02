@@ -22,7 +22,7 @@ export default function Row({ resource }) {
     name: "",
     description: "",
     authorization: [{ class: "", level: "" }],
-    resourceUrl: "",
+    // resourceUrl: "",
     selectedFile: "",
     visibility: true,
   });
@@ -36,8 +36,7 @@ export default function Row({ resource }) {
     event.preventDefault();
     setErrorFlag(false);
 
-    const { name, description, authorization, resourceUrl, selectedFile } =
-      formState;
+    const { name, description, authorization, selectedFile } = formState;
 
     if (selectedFile != "") {
       setIsUploading(true);
@@ -67,11 +66,7 @@ export default function Row({ resource }) {
           });
         }
       );
-    } else if (
-      resource.docUrl == "" &&
-      selectedFile == "" &&
-      resourceUrl == ""
-    ) {
+    } else if (resource.docUrl == "" && selectedFile == "") {
       setErrorFlag(true);
     } else {
       await editDocument();
@@ -79,16 +74,10 @@ export default function Row({ resource }) {
   };
 
   const editDocument = async (docUrl = "") => {
-    const {
-      name,
-      description,
-      authorization,
-      resourceUrl,
-      selectedFile,
-      visibility,
-    } = formState;
+    const { name, description, authorization, selectedFile, visibility } =
+      formState;
     const db = getFirestore(firebase_app);
-    if (docUrl == "" && resource.docUrl !== "" && resourceUrl == "") {
+    if (docUrl == "" && resource.docUrl !== "") {
       docUrl = resource.docUrl;
     }
     await setDoc(
@@ -97,7 +86,6 @@ export default function Row({ resource }) {
         name,
         description,
         authorization,
-        resourceUrl,
         docUrl,
         visibility,
       },
@@ -112,18 +100,10 @@ export default function Row({ resource }) {
   };
 
   const handleOnchange = (e) => {
-    if (e.target.id === "resourceUrl") {
-      setFormState({
-        ...formState,
-        [e.target.id]: e.target.value,
-        selectedFile: "",
-      });
-    } else {
-      setFormState({
-        ...formState,
-        [e.target.id]: e.target.value,
-      });
-    }
+    setFormState({
+      ...formState,
+      [e.target.id]: e.target.value,
+    });
   };
 
   const handleSelect = (e, index) => {
@@ -146,7 +126,6 @@ export default function Row({ resource }) {
       setFormState({
         ...formState,
         selectedFile: file,
-        resourceUrl: "",
       });
     }
   };
@@ -303,7 +282,7 @@ export default function Row({ resource }) {
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     for="user_avatar"
                   >
-                    Upload a document / Enter Video URL
+                    Upload a document / Video
                   </label>
                   <div className="flex flex-row">
                     <input
@@ -311,15 +290,15 @@ export default function Row({ resource }) {
                       aria-describedby="user_avatar_help"
                       id="user_avatar"
                       type="file"
-                      accept=".pdf, .doc"
+                      accept=".pdf, .doc, .mp4, .avi, .mov"
                       onChange={handleFileUpload}
                       ref={fileRef}
                     />
-                    <p className="ml-5 text-white">or</p>
+                    {/* <p className="ml-5 text-white">or</p> */}
                   </div>
                 </div>
 
-                <div>
+                {/* <div>
                   <input
                     type="text"
                     id="resourceUrl"
@@ -328,9 +307,9 @@ export default function Row({ resource }) {
                     onChange={(e) => handleOnchange(e)}
                     value={formState.resourceUrl}
                   />
-                </div>
+                </div> */}
 
-                <div class="flex items-center mb-4">
+                <div class="flex items-center mb-4 mt-8">
                   <input
                     id="default-checkbox"
                     type="checkbox"
@@ -409,7 +388,7 @@ export default function Row({ resource }) {
               description: resource.description,
               authorization: resource.authorization,
               selectedFile: "",
-              resourceUrl: resource.resourceUrl,
+              // resourceUrl: resource.resourceUrl,
               visibility: resource.visibility,
             });
           }}

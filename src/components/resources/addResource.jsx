@@ -23,7 +23,7 @@ export default function AddResources() {
     name: "",
     description: "",
     authorization: [{ class: "", level: "" }],
-    resourceUrl: "",
+    // resourceUrl: "",
     selectedFile: "",
   });
   const [errorFlag, setErrorFlag] = useState(false);
@@ -40,8 +40,7 @@ export default function AddResources() {
     setErrorMsg("");
     setSuccessMsg("");
 
-    const { name, description, authorization, resourceUrl, selectedFile } =
-      formState;
+    const { selectedFile } = formState;
 
     if (selectedFile != "") {
       setIsUploading(true);
@@ -76,22 +75,20 @@ export default function AddResources() {
           });
         }
       );
-    } else if (resourceUrl !== "") {
-      await addDocument();
     } else {
       setErrorFlag(true);
     }
   };
 
   const addDocument = async (docUrl = "") => {
-    const { name, description, authorization, resourceUrl, selectedFile } =
-      formState;
+    console.log(docUrl);
+    const { name, description, authorization } = formState;
     const db = getFirestore(firebase_app);
     await addDoc(collection(db, "resources"), {
       name,
       description,
       authorization,
-      resourceUrl,
+      // resourceUrl,
       docUrl,
       visibility: true,
       timestamp: serverTimestamp(),
@@ -102,7 +99,7 @@ export default function AddResources() {
           name: "",
           description: "",
           authorization: [{ class: "", level: "" }],
-          resourceUrl: "",
+          // resourceUrl: "",
           selectedFile: "",
         });
         fileRef.current.value = "";
@@ -114,18 +111,10 @@ export default function AddResources() {
   };
 
   const handleOnchange = (e) => {
-    if (e.target.id === "resourceUrl") {
-      setFormState({
-        ...formState,
-        [e.target.id]: e.target.value,
-        selectedFile: "",
-      });
-    } else {
-      setFormState({
-        ...formState,
-        [e.target.id]: e.target.value,
-      });
-    }
+    setFormState({
+      ...formState,
+      [e.target.id]: e.target.value,
+    });
   };
 
   const handleSelect = (e, index) => {
@@ -148,7 +137,7 @@ export default function AddResources() {
       setFormState({
         ...formState,
         selectedFile: file,
-        resourceUrl: "",
+        // resourceUrl: "",
       });
     }
   };
@@ -338,7 +327,7 @@ export default function AddResources() {
                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                         for="user_avatar"
                       >
-                        Upload a document / Enter Video URL
+                        Upload a document / Video
                       </label>
                       <div className="flex flex-row">
                         <input
@@ -346,15 +335,15 @@ export default function AddResources() {
                           aria-describedby="user_avatar_help"
                           id="user_avatar"
                           type="file"
-                          accept=".pdf, .doc"
+                          accept=".pdf, .doc, .mp4, .avi, .mov"
                           onChange={handleFileUpload}
                           ref={fileRef}
                         />
-                        <p className="ml-5 text-white">or</p>
+                        {/* <p className="ml-5 text-white">or</p> */}
                       </div>
                     </div>
 
-                    <div>
+                    {/* <div>
                       <input
                         type="text"
                         id="resourceUrl"
@@ -363,7 +352,7 @@ export default function AddResources() {
                         onChange={(e) => handleOnchange(e)}
                         value={formState.resourceUrl}
                       />
-                    </div>
+                    </div> */}
 
                     {errorFlag ? (
                       <p class=" text-sm text-red-600 dark:text-red-500 col-span-2">
