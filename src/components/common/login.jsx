@@ -22,7 +22,7 @@ export default function Login({ setLoggedIn }) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        if (user.uid == "HKOSRdButfXVCy5QHZKbUhUz2dF2") {
+        if (user.uid == "dqhgjOWwNfgMumElyWWkdKaa7yx2") {
           localStorage.setItem("admin", user.uid);
           setLoggedIn(true);
         } else {
