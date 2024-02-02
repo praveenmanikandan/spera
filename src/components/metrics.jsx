@@ -129,7 +129,7 @@ export default function Metrics() {
               <ReactTooltip
                 className="hidden md:block lg:block"
                 id="my-tooltip"
-                style={{ fontSize: "16px", padding: "24px" }}
+                style={{ fontSize: "16px", padding: "24px", maxWidth:"90%" }}
               />
             </div>
             <div className="mt-[3vh] md:mb-[3vh] lg:mb-[3vh]">
@@ -142,7 +142,7 @@ export default function Metrics() {
             </div>
           </div>
 
-          <div className="bg-secondary rounded-3xl p-2 pl-8 text-xs mt-[5vh] md:rounded-[3vw] lg:rounded-[3vw] md:px-14 lg:px-14 md:p-8 lg:p-8 ml-2 md:ml-[2vw] lg:ml-[2vw]">
+          {/* <div className="bg-secondary rounded-3xl p-2 pl-8 text-xs mt-[5vh] md:rounded-[3vw] lg:rounded-[3vw] md:px-14 lg:px-14 md:p-8 lg:p-8 ml-2 md:ml-[2vw] lg:ml-[2vw]">
             <div className="flex flex-row w-[35vw] md:w-[20vw] lg:w-[20vw]">
               <p className="mt-1 font-poppins md:text-xl lg:text-xl">
                 Accuracy
@@ -308,7 +308,7 @@ export default function Metrics() {
                 13,347
               </p>
             </div>
-          </div>
+          </div> */}
           {/* </div> */}
         </ScrollContainer>
 
