@@ -95,6 +95,10 @@ export default function Metrics() {
                 }
                 arrowContent={<div className="rc-tooltip-arrow-inner"></div>}
                 placement="top"
+                mouseEnterDelay={0}
+                mouseLeaveDelay={0.1}
+                transitionName="rc-tooltip-zoom"
+                
               >
                 <svg
                   className="w-6 h-6 ml-auto text-gray-800 md:w-12 lg:w-12 md:h-12 lg:h-12 dark:text-primary"
@@ -135,6 +139,10 @@ export default function Metrics() {
                 }
                 arrowContent={<div className="rc-tooltip-arrow-inner"></div>}
                 placement="top"
+                mouseEnterDelay={0}
+                mouseLeaveDelay={0.1}
+                transitionName="rc-tooltip-zoom"
+                
               >
                 <svg
                   className="w-6 h-6 ml-auto text-gray-800 md:w-12 lg:w-12 md:h-12 lg:h-12 dark:text-primary"
@@ -176,6 +184,10 @@ export default function Metrics() {
                 }
                 arrowContent={<div className="rc-tooltip-arrow-inner"></div>}
                 placement="top"
+                mouseEnterDelay={0}
+                mouseLeaveDelay={0.1}
+                transitionName="rc-tooltip-zoom"
+                
               >
                 <svg
                   className="w-6 h-6 ml-auto text-gray-800 md:w-12 lg:w-12 md:h-12 lg:h-12 dark:text-primary"
@@ -214,6 +226,10 @@ export default function Metrics() {
                 }
                 arrowContent={<div className="rc-tooltip-arrow-inner"></div>}
                 placement="top"
+                mouseEnterDelay={0}
+                mouseLeaveDelay={0.1}
+                transitionName="rc-tooltip-zoom"
+                
               >
                 <svg
                   className="w-6 h-6 ml-auto text-gray-800 md:w-12 lg:w-12 md:h-12 lg:h-12 dark:text-primary"
@@ -250,6 +266,10 @@ export default function Metrics() {
                 }
                 arrowContent={<div className="rc-tooltip-arrow-inner"></div>}
                 placement="top"
+                mouseEnterDelay={0}
+                mouseLeaveDelay={0.1}
+                transitionName="rc-tooltip-zoom"
+                overlayInnerStyle={{ marginRight: "10px" }}
               >
                 <svg
                   className="w-6 h-6 ml-auto text-gray-800 md:w-12 lg:w-12 md:h-12 lg:h-12 dark:text-primary"
