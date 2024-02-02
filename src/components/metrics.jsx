@@ -12,7 +12,6 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 import ScrollContainer from "react-indiana-drag-scroll";
 
 export default function Metrics() {
-  const [cursorStyle, setCursorStyle] = useState("grab");
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
@@ -68,9 +67,7 @@ export default function Metrics() {
           Our results speaks for themselves
         </p>
         <ScrollContainer
-          className={`flex flex-row ml-[5vw]  md:ml-[15vw] lg:ml-[35vw] lex overflow-x-auto  md:pb-4 lg:pb-4 pb-2 scroll-container cursor-${cursorStyle}`}
-          onStartScroll={() => setCursorStyle("grabbing")}
-          onEndScroll={() => setCursorStyle("grab")}
+          className={`flex flex-row ml-[5vw]  md:ml-[15vw] lg:ml-[35vw] lex overflow-x-auto  md:pb-4 lg:pb-4 pb-2 scroll-container`}
           horizontal={true}
         >
           {/* <div
@@ -519,4 +516,3 @@ const modifiedData = weeklyReturns.map((item) => ({
   ...item,
   return: item.return - 100,
 }));
-
