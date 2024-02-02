@@ -1,3 +1,4 @@
+import Head from "next/head";
 import About from "../components/about";
 import Caption from "../components/caption";
 import Contact from "../components/contact";
@@ -14,6 +15,9 @@ export default function Home() {
 
   return (
     <>
+    <Head>
+      <title>Spera</title>
+    </Head>
       <Navbar />
       <About handleScroll={handleScroll} />
       <Metrics />

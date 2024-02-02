@@ -520,4 +520,3 @@ const modifiedData = weeklyReturns.map((item) => ({
   return: item.return - 100,
 }));
 
-console.log(modifiedData);
