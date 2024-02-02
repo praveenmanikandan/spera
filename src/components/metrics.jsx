@@ -8,8 +8,10 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import React, { useEffect, useState } from "react";
-import { Tooltip as ReactTooltip } from "react-tooltip";
+// import { Tooltip as ReactTooltip } from "react-tooltip";
+import ReactToolTip from "rc-tooltip";
 import ScrollContainer from "react-indiana-drag-scroll";
+import "rc-tooltip/assets/bootstrap_white.css";
 
 export default function Metrics() {
   const [isReady, setIsReady] = useState(false);
@@ -82,55 +84,42 @@ export default function Metrics() {
               <p className="mt-1 font-poppins md:text-xl lg:text-xl">
                 Max. Drawdown
               </p>
-              <a
-                data-tooltip-id="my-tooltip-mobile"
-                data-tooltip-html="Shows the biggest potential loss in a trading strategy, indicating the maximum downturn it could have experienced across all its trades."
-                className="block w-6 h-6 ml-auto text-gray-800 md:hidden lg:hidden md:w-12 lg:w-12 md:h-12 lg:h-12 dark:text-primary"
+              <ReactToolTip
+                trigger={["hover"]}
+                overlay={<span>tooltip</span>}
+                arrowContent={<div className="rc-tooltip-arrow-inner"></div>}
+                placement="top"
               >
-                <svg
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
+                <div
+                  // data-tooltip-id="my-tooltip"
+                  // data-tooltip-html="Shows the biggest potential loss in a trading strategy, indicating the maximum downturn it could have experienced across all its trades."
+                  className="w-6 h-6 ml-auto text-gray-800 md:w-12 lg:w-12 md:h-12 lg:h-12 dark:text-primary"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm9-3a1.5 1.5 0 0 1 2.5 1.1 1.4 1.4 0 0 1-1.5 1.5 1 1 0 0 0-1 1V14a1 1 0 1 0 2 0v-.5a3.4 3.4 0 0 0 2.5-3.3 3.5 3.5 0 0 0-7-.3 1 1 0 0 0 2 .1c0-.4.2-.7.5-1Zm1 7a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </a>
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm9-3a1.5 1.5 0 0 1 2.5 1.1 1.4 1.4 0 0 1-1.5 1.5 1 1 0 0 0-1 1V14a1 1 0 1 0 2 0v-.5a3.4 3.4 0 0 0 2.5-3.3 3.5 3.5 0 0 0-7-.3 1 1 0 0 0 2 .1c0-.4.2-.7.5-1Zm1 7a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </ReactToolTip>
 
-              <a
-                data-tooltip-id="my-tooltip"
-                data-tooltip-html="Shows the biggest potential loss in a trading strategy, indicating the maximum downturn it could have experienced across all its trades."
-                className="hidden w-6 h-6 ml-auto text-gray-800 md:block lg:block md:w-12 lg:w-12 md:h-12 lg:h-12 dark:text-primary"
-              >
-                <svg
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm9-3a1.5 1.5 0 0 1 2.5 1.1 1.4 1.4 0 0 1-1.5 1.5 1 1 0 0 0-1 1V14a1 1 0 1 0 2 0v-.5a3.4 3.4 0 0 0 2.5-3.3 3.5 3.5 0 0 0-7-.3 1 1 0 0 0 2 .1c0-.4.2-.7.5-1Zm1 7a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </a>
-
-
-              <ReactTooltip
+              {/* <ReactTooltip
                 className="block md:hidden lg:hidden"
-                id="my-tooltip-mobile"
+                id="my-tooltip"
                 style={{ width: "90%" }}
               />
               <ReactTooltip
                 className="hidden md:block lg:block"
                 id="my-tooltip"
-                style={{ fontSize: "16px", padding: "24px", maxWidth:"90%" }}
-              />
+                style={{ fontSize: "16px", padding: "24px", maxWidth: "90%" }}
+              /> */}
             </div>
             <div className="mt-[3vh] md:mb-[3vh] lg:mb-[3vh]">
               <p className="inline text-4xl font-poppins font-[700] tracking-[3px] md:text-8xl lg:text-8xl md:tracking-[3.5px] lg:tracking-[3.5px]">
