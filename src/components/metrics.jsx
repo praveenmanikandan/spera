@@ -83,9 +83,9 @@ export default function Metrics() {
                 Max. Drawdown
               </p>
               <a
-                data-tooltip-id="my-tooltip"
+                data-tooltip-id="my-tooltip-mobile"
                 data-tooltip-html="Shows the biggest potential loss in a trading strategy, indicating the maximum downturn it could have experienced across all its trades."
-                className="w-6 h-6 ml-auto text-gray-800 md:w-12 lg:w-12 md:h-12 lg:h-12 dark:text-primary"
+                className="block w-6 h-6 ml-auto text-gray-800 md:hidden lg:hidden md:w-12 lg:w-12 md:h-12 lg:h-12 dark:text-primary"
               >
                 <svg
                   aria-hidden="true"
@@ -101,9 +101,29 @@ export default function Metrics() {
                 </svg>
               </a>
 
+              <a
+                data-tooltip-id="my-tooltip"
+                data-tooltip-html="Shows the biggest potential loss in a trading strategy, indicating the maximum downturn it could have experienced across all its trades."
+                className="hidden w-6 h-6 ml-auto text-gray-800 md:block lg:block md:w-12 lg:w-12 md:h-12 lg:h-12 dark:text-primary"
+              >
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm9-3a1.5 1.5 0 0 1 2.5 1.1 1.4 1.4 0 0 1-1.5 1.5 1 1 0 0 0-1 1V14a1 1 0 1 0 2 0v-.5a3.4 3.4 0 0 0 2.5-3.3 3.5 3.5 0 0 0-7-.3 1 1 0 0 0 2 .1c0-.4.2-.7.5-1Zm1 7a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+
+
               <ReactTooltip
                 className="block md:hidden lg:hidden"
-                id="my-tooltip"
+                id="my-tooltip-mobile"
                 style={{ width: "90%" }}
               />
               <ReactTooltip
