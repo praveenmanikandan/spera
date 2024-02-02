@@ -3,3 +3,11 @@
 @tailwind utilities;
 
 
+body{
+    background-color: #fdc237;
+    overflow-x: hidden;
+}
+
+.heading{
+    font-family: 'Anton-Regular';
+}
