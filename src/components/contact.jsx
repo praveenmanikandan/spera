@@ -15,14 +15,14 @@ export default function Contact({ scrollToRef }) {
         className="flex flex-row px-[2vw] md:px-[5vw] lg:px-[5vw] mt-4 md:mt-[5vh] lg:mt-[5vh]"
         ref={scrollToRef}
       >
-        <a href={`mailto:praveenmanikandan2000@gmail.com`}>
+        <a href={`mailto:ceo@spera.pro`}>
           <div className="w-[45vw] bg-secondary flex flex-row px-2 py-1 rounded-[5vw] md:pl-[5vw] lg:pl-[5vw] md:pr-[2vw] lg:pr-[2vw] md:py-[1vw] lg:py-[1vw]">
             <div className="flex flex-col justify-center">
               <p className="text-sm  text-primary font-anton uppercase  ml-[1vh] md:text-4xl lg:text-6xl">
                 Mail Us
               </p>
               <p className="text-[6px] font-poppins ml-[1vh] md:text-[1vw] lg:text-[1vw]">
-                praveenmanikandan2000@gmail.com
+                ceo@spera.pro
               </p>
             </div>
             <div className="h-[8vw] bg-primary w-[8vw] rounded-full ml-auto" />
