@@ -16,15 +16,31 @@ export default function About({ handleScroll }) {
           </p>
 
           <div
-            className=" md:p-[2vh] lg:p-[2vh] p-[1vh] bg-secondary rounded-full flex row items-center mt-[5vh] cursor-pointer"
+            className=" md:p-[2vh] lg:p-[2vh] p-[1vh] bg-secondary rounded-full flex row items-center mt-[5vh] cursor-pointer hover:bg-primary transition font-anton duration-500 hover:text-secondary text-primary "
             onClick={handleScroll}
           >
             <div className="">
-              <p className="text-2xl tracking-[0.5px] md:text-5xl lg:text-5xl md:leading-[72px] lg:leading-[72px] text-primary font-anton uppercase md:ml-[32px] lg:ml-[32px] ml-[3vh]">
+              <p className="text-2xl tracking-[0.5px] md:text-5xl lg:text-5xl md:leading-[72px] lg:leading-[72px]font-anton uppercase md:ml-[32px] lg:ml-[32px] ml-[3vh]">
                 Let's connect
               </p>
             </div>
-            <div className="h-[8vh] bg-primary w-[8vh] rounded-full ml-auto" />
+            <div className="h-[8vh] bg-primary w-[8vh] rounded-full ml-auto flex justify-center items-center">
+              <svg
+                class="w-[5vh] h-[5vh] text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 12H5m14 0-4 4m4-4-4-4"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
